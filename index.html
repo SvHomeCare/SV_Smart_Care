@@ -109,6 +109,12 @@
   <section class="hero">
     <h2>Quick & Reliable Home Appliance Service</h2>
     <p>SV Smart Care offers trusted repair services for Washing Machines, Fridges, ACs, and Microwaves. Our certified technicians deliver high-quality repairs using genuine spares with same-day service.</p>
+    
+    <!-- Dynamic Image -->
+    <div style="text-align:center; margin: 20px 0;">
+      <img id="dynamic-image" src="https://via.placeholder.com/600x300?text=Washing+Machine+Repair" alt="Service Image" style="width:100%; max-width:600px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+    </div>
+    
     <div class="cta">
       <a href="#contact">Book Now</a>
       <a href="tel:6385255152">Call Now</a>
@@ -155,5 +161,22 @@
   <footer>
     &copy; 2025 SV Smart Care – All rights reserved.
   </footer>
+
+  <script>
+    const images = [
+      "https://via.placeholder.com/600x300?text=Washing+Machine+Repair",
+      "https://via.placeholder.com/600x300?text=Fridge+Service",
+      "https://via.placeholder.com/600x300?text=AC+Repair",
+      "https://via.placeholder.com/600x300?text=Microwave+Service"
+    ];
+
+    let currentIndex = 0;
+    const dynamicImage = document.getElementById("dynamic-image");
+
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % images.length;
+      dynamicImage.src = images[currentIndex];
+    }, 3000); // change image every 3 seconds
+  </script>
 </body>
 </html>
